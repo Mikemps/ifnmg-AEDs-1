@@ -13,7 +13,7 @@ int main()
     vasHid = desVol*rotMin;
     printf("A vasão da bomba hidráulica é de: %.2f(cm³/min)", vasHid);
 
-    printf("\nInfrome o volume máximo do reservatório(L): ");
+    printf("\nInforme o volume máximo do reservatório(L): ");
     scanf("%f", &volMax);
 
     temNec = (volMax*1000)/vasHid;
