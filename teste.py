@@ -9,27 +9,20 @@ def categorizar_iqa(iqa):
     else:
         return "Ruim"
 
-#def main(): <-----
-while True:
-    
-    pm25 = float(input("Entre com o valor de PM2.5 (µg/m³): "))
-    co2 = float(input("Entre com o valor de CO2 (ppm): "))
-    
-    iqa = calcular_iqa(pm25, co2)
-    print(f"IQA: {iqa:.2f}")
-    print(f"Categoria: {categorizar_iqa(iqa)}")
-    
-    opcao = input("Deseja repetir o codigo? (s/n): ")
-    if opcao != 's' and opcao != 'S':
-        break
-    '''
-    Aqui vc precisa colocar uma perguta para o usuario com as 
-    opções de finalisar o programa ou repetir e depois um if 
-    condicional com um "break" para finalizar o codigo
+def main():
+    while True:
+        
+        pm25 = float(input("Entre com o valor de PM2.5 (µg/m³): "))
+        co2 = float(input("Entre com o valor de CO2 (ppm): "))
+        
+        iqa = calcular_iqa(pm25, co2)
+        print(f"IQA: {iqa:.2f}")
+        print(f"Categoria: {categorizar_iqa(iqa)}")
+        
+        continuar = float(input("[1]Repetir\n [0]Encerrar \nOpção: "))
+        if continuar != 1:
+            break
 
-    EX:
+if __name__ == "__main__": 
+    main()
     
-    
-    '''  
-#if _name_ == "_main_": <------
-#    main()     <-------
