@@ -17,7 +17,7 @@ int main()
 
     for (int estacoes=1; estacoes<=estMonit; estacoes++){
         do{
-            printf("\n%i° Estação", estacoes);
+            printf("\n------------ %i° Estação ------------", estacoes);
             printf("\nInforme o valor de PM2.5 (µg/m³): ");
             scanf("%f", &pm25);
             printf("Informe o valor de CO2 (ppm): ");

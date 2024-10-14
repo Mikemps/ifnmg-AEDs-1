@@ -9,21 +9,18 @@ def categorizarIQA(iqa):
     else:
         return "Ruim."
 
-def main():
-    while True:
-        pm25 = float(input("Informe o valor de PM2.5 (µg/m³): "))
-        co2 = float(input("Informe o valor de CO2 (ppm): "))
+while True:
+    pm25 = float(input("Informe o valor de PM2.5 (µg/m³): "))
+    co2 = float(input("Informe o valor de CO2 (ppm): "))
 
-        iqa = calcularIQA(pm25, co2)
+    iqa = calcularIQA(pm25, co2)
 
-        print("\n------ Análise ------")
-        print(f"IQA: {iqa:.2f}")
-        print(f"Categoria: {categorizarIQA(iqa)}")
-        print("---------------------\n")
+    print("\n------ Análise ------")
+    print(f"IQA: {iqa:.2f}")
+    print(f"Categoria: {categorizarIQA(iqa)}")
+    print("---------------------\n")
 
-        op = input("Deseja realizar outra análise? (s/n): ")
-        if op!='s' and op!='S':
-            break
-if __name__ == "__main__": 
-    main()
+    op = input("Deseja realizar outra análise? (s/n): ")
+    if op!='s' and op!='S':
+        break
     

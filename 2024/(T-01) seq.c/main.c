@@ -1,21 +1,24 @@
 #include <stdio.h>
+#include <locale.h>
 
 int main()
 {
+    setlocale(LC_ALL, "Portuguese_Brazil");
+    
     float desVol, rotMin, vasHid, volMax, temNec;
 
-    printf("Informe o deslocamento volumetrico(cmÂ³): ");
+    printf("Informe o deslocamento volumetrico(cm³): ");
     scanf("%f", &desVol);
 
-    printf("Informe a quantidade de rotaÃ§Ãµes por minuto: ");
+    printf("Informe a quantidade de rotações por minuto: ");
     scanf("%f", &rotMin);
 
     vasHid = desVol*rotMin;
-    printf("A vasÃ£o da bomba hidrÃ¡ulica Ã© de: %.2f(cmÂ³/min)", vasHid);
+    printf("A vasão da bomba hidráulica é de: %.2f(cm³/min)", vasHid);
 
-    printf("\nInforme o volume mÃ¡ximo do reservatÃ³rio(L): ");
+    printf("\n\nInforme o volume máximo do reservatório(L): ");
     scanf("%f", &volMax);
 
     temNec = (volMax*1000)/vasHid;
-    printf("O tempo necessario para encher o reservatÃ³rio Ã© de: %.2f(min)", temNec);
+    printf("O tempo necessario para encher o reservatório é de: %.2f(min)", temNec);
 }

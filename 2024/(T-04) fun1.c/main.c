@@ -20,21 +20,21 @@ int main()
     setlocale(LC_ALL, "Portuguese_Brazil");
 
     float pm25, co2, iqa;
-    int op;
+    char op;
     do {
-        printf("Informe o valor de PM2.5 (ï¿½g/mï¿½): ");
+        printf("Informe o valor de PM2.5 (µg/m³): ");
         scanf("%f", &pm25);
         printf("Informe o valor de CO2 (ppm): ");
         scanf("%f", &co2);
 
         iqa = calcularIQA(pm25, co2);
         
-        printf("\n------ Anï¿½lise ------\n");
+        printf("\n------ Análise ------\n");
         printf("IQA: %.2f\n", iqa);
         printf("Categoria: %s\n", categorizarIQA(iqa));
         printf("---------------------\n\n");
 
-        printf("Deseja realizar outra anï¿½lise? (s/n): ");
-        scanf(" %i", &op);
-    } while (op == 1);
+        printf("Deseja realizar outra análise? (s/n): ");
+        scanf(" %s", &op);
+    } while (op == 's' || op == 'S');
 }
