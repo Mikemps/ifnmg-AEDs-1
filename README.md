@@ -1,4 +1,4 @@
-# Micael Pereira da Silva
+# Algoritmos e Estruturas de Dados I
 Repositório criado para armazenar os trabalhos de `AEDs I`
 
 - __Observações:__
