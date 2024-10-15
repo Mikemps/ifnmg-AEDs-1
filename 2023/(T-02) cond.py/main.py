@@ -1,4 +1,3 @@
-#Caio, Nifane, Micael
 import math
 
 idade = float(input("Digite a idade do frango (d): "))

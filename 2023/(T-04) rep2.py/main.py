@@ -1,7 +1,7 @@
 tranMax = 0
 resiTer = 0
 espeIso = 0
-while True:
+while True: 
     print("------------- Calculadora de Isolamento -------------");
     if tranMax==0:
         print("[1]Transferencia de calor máxima admissível")

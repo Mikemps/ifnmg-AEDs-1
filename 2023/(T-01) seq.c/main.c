@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <math.h>
-//Trio: Micael Pereira, Mateus Martins, Herisson Olimpio
+#include <locale.h>
+
 int main()
 {
+    setlocale(LC_ALL, "Portuguese_Brazil");
+
     float condTer, tempInt, tempBul, umidRel, convInt, convExt, tempOrv, C1, espeIso;
     
     printf("Digite o valor da condutividade termica (W/(m.K)): ");

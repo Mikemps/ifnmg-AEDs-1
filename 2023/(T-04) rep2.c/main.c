@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <math.h>
+#include <locale.h>
 
 int main()
 {
+    setlocale(LC_ALL, "Portuguese_Brazil");
+
     int opcao;
     float vazaoMa, compTub, aumeMax, tranMax=0, tempAmb, tempFlu, resiTer=0, diamExt, condTer, espeIso=0;
     

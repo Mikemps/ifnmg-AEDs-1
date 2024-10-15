@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <math.h>
+#include <locale.h>
 
-int main() //Caio, Nifane, Micael
+int main()
 {
+    setlocale(LC_ALL, "Portuguese_Brazil");
+
     float idade, pesoAnimal, pesoVivo, supA, supB;
     
     printf("Digite a idade do frango (d): ");

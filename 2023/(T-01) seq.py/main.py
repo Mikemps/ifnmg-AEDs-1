@@ -1,5 +1,3 @@
-#Trio: Micael Pereira, Mateus Martins, Herisson Olimpio
-
 condTer = float(input("Digite o valor da condutividade termica (W/(m.K)): "))
 tempInt = float(input("Digite o valor da temperatura interna (°C): "))
 tempBul = float(input("Digite o valor da temperatura de buldo seco (°C): "))

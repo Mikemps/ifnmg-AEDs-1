@@ -1,7 +1,10 @@
 #include <stdio.h>     
+#include <locale.h>
 
-int main()    //Micael Pereira, Mateus Martins 
+int main()
 {   
+    setlocale(LC_ALL, "Portuguese_Brazil");
+
     int totGatos, gatos, quant_1=0, quant_2=0, quant_3=0;
     float circTor, distCal, percFel, mediAba=0, mediAci=0, medIdea=0;
 

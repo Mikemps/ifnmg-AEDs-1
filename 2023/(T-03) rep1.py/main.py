@@ -1,7 +1,7 @@
 percAba = 0 
 percAci = 0
 percIde = 0
-quant_1 = 0         #Micael Pereira, Mateus Martins
+quant_1 = 0        
 quant_2 = 0
 quant_3 = 0
 
