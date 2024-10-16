@@ -1,0 +1,3 @@
+docente,1,mike,s,s
+disciplina,1,s,s,mike,90
+disciplina,2,e,e,mike,90

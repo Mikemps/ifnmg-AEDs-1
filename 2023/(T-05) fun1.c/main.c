@@ -15,11 +15,11 @@ typedef struct {
 
 void texto(Maquina maquina) {
     printf("\n%s\n", "-------------------------------------------------");
-    printf("Número de registro: %d\n", maquina.registro);
+    printf("Nï¿½mero de registro: %d\n", maquina.registro);
     printf("Tipo: %s\n", maquina.tipo);
     printf("Modelo: %s\n", maquina.modelo);
     printf("Fabricante: %s\n", maquina.fabricante);
-    printf("Aluguel diário: R$ %.2f\n", maquina.diaAluguel);
+    printf("Aluguel diï¿½rio: R$ %.2f\n", maquina.diaAluguel);
 }
 
 float calculoAluguel(Maquina maquina, int dias) {
@@ -29,19 +29,19 @@ float calculoAluguel(Maquina maquina, int dias) {
 int preencheMaquina(Maquina *maquinas, int tam) {
     for (int i = 0; i < tam; i++) {
         printf("\n%s\n", "-------------------------------------------------");
-        printf("Digite o número de registro: ");
+        printf("Digite o nï¿½mero de registro: ");
         scanf("%d", &maquinas[i].registro);
 
-        printf("Digite o tipo da máquina: ");
+        printf("Digite o tipo da mï¿½quina: ");
         scanf(" %[^\n]", maquinas[i].tipo); 
 
-        printf("Digite o modelo da máquina: ");
+        printf("Digite o modelo da mï¿½quina: ");
         scanf(" %[^\n]", maquinas[i].modelo);
 
         printf("Digite o fabricante: ");
         scanf(" %[^\n]", maquinas[i].fabricante);
 
-        printf("Digite o valor diário do aluguel: R$");
+        printf("Digite o valor diï¿½rio do aluguel: R$");
         scanf("%f", &maquinas[i].diaAluguel);
     }
     return tam; 
@@ -73,7 +73,7 @@ int main()
 
     while (1) {
         int quantMaquina, op;
-        printf("Digite a quantidade de máquinas: ");
+        printf("Digite a quantidade de mï¿½quinas: ");
         scanf("%d", &quantMaquina);
 
         Maquina maquinas[MAX_MAQUINAS]; 
@@ -81,12 +81,12 @@ int main()
         
         while (1) {
             printf("\n%s\n", "-------------------------------------------------");
-            printf("[1] - Entrar com um conjunto novo de máquinas.\n"
+            printf("[1] - Entrar com um conjunto novo de mï¿½quinas.\n"
                    "[2] - Listar maquinas por tipo.\n"
                    "[3] - Pesquisar maquina por registro.\n"
                    "[4] - Sair\n"
                    "-------------------------------------------------\n");
-            printf("Escolha a sua opção: ");
+            printf("Escolha a sua opï¿½ï¿½o: ");
             scanf("%d", &op);
             
             if (op == 1) {
@@ -94,18 +94,18 @@ int main()
             } 
             else if (op == 2) {
                 char tipo[50];
-                printf("Digite o tipo de máquina: ");
+                printf("Digite o tipo de mï¿½quina: ");
                 scanf(" %[^\n]", tipo); 
                 int numMaquina = listaMaquinario(maquinas, quantMaquina, tipo);
-                printf("\n%d máquina(s) encontrada(s).\n", numMaquina);
+                printf("\n%d mï¿½quina(s) encontrada(s).\n", numMaquina);
             } 
             else if (op == 3) {
                 int registro;
-                printf("Digite o registro da máquina: ");
+                printf("Digite o registro da mï¿½quina: ");
                 scanf("%d", &registro);
                 int pesquisa = busca(maquinas, quantMaquina, registro);
                 if (pesquisa == -1) {
-                    printf("Não encontrado!\n");
+                    printf("Nï¿½o encontrado!\n");
                 } 
                 else {
                     texto(maquinas[pesquisa]);
@@ -121,7 +121,7 @@ int main()
                 exit(0);
             } 
             else 
-                printf("Opção inválida!\n");
+                printf("OpÃ§Ã£o invÃ¡lida!\n");
         }
     }
 }
