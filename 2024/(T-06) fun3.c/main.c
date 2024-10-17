@@ -43,27 +43,23 @@ int main()
 
     Engenheiro *engenheiros = NULL;
     Projeto *projetos = NULL;
-    int quantEngenheiros = 0;
-    int quantProjetos = 0;
-    int opcao;
-    int salvar;
+    int quantEnge = 0, quantProj = 0, op, salvar;
     
     FILE *file = fopen("dados.txt", "r");
     if (file != NULL) {
-        fscanf(file, "%d", &quantEngenheiros);
-        engenheiros = malloc(quantEngenheiros * sizeof(Engenheiro));
-        for (int i = 0; i < quantEngenheiros; i++) {
+        fscanf(file, "%d", &quantEnge);
+        engenheiros = malloc(quantEnge * sizeof(Engenheiro));
+        for (int i = 0; i < quantEnge; i++) {
             fscanf(file, "%d %s %s", &(engenheiros)[i].id, (engenheiros)[i].nome, (engenheiros)[i].formacao);
         }
     
-        fscanf(file, "%d", &quantProjetos);
-        projetos = malloc(quantProjetos * sizeof(Projeto));
-        for (int i = 0; i < quantProjetos; i++) {
+        fscanf(file, "%d", &quantProj);
+        projetos = malloc(quantProj * sizeof(Projeto));
+        for (int i = 0; i < quantProj; i++) {
             int id_eng;
             fscanf(file, "%d %s %f %d", &(projetos)[i].idProjeto, (projetos)[i].descricao, &(projetos)[i].valor, &id_eng);
             (projetos)[i].engenheiro = &(engenheiros)[id_eng];
         }
-
         fclose(file);
     }
 
@@ -75,22 +71,22 @@ int main()
         printf("[5] Pesquisar engenheiro por nome\n");
         printf("[6] Sair\n");
         printf("Escolha uma opção: ");
-        scanf("%d", &opcao);
+        scanf("%d", &op);
 
-        if(opcao > 6 || opcao < 1)
+        if(op > 6 || op < 1)
             printf("\nOpção inválida.\n\n");
 
-        switch (opcao) {
+        switch (op) {
             case 1: {
-                if (quantEngenheiros == 0) {
+                if (quantEnge == 0) {
                     printf("\nNão há engenheiros cadastrados.\n\n");
                     break;
                 }
             
-                quantProjetos += 1;
-                projetos = realloc(projetos, (quantProjetos) * sizeof(Projeto));
-                Projeto *novo = &(projetos)[quantProjetos - 1];
-                novo->idProjeto = quantProjetos - 1;  
+                quantProj += 1;
+                projetos = realloc(projetos, (quantProj) * sizeof(Projeto));
+                Projeto *novo = &(projetos)[quantProj - 1];
+                novo->idProjeto = quantProj - 1;  
             
                 printf("Descrição do projeto: ");
                 scanf(" %[^\n]", novo->descricao);
@@ -98,7 +94,7 @@ int main()
                 scanf("%f", &novo->valor);
             
                 printf("\nEscolha o engenheiro responsável pelo projeto:\n");
-                for (int i = 0; i < quantEngenheiros; i++) {
+                for (int i = 0; i < quantEnge; i++) {
                     printf("[%d] - %s\n", engenheiros[i].id, engenheiros[i].nome);
                 }
             
@@ -107,53 +103,52 @@ int main()
                 scanf("%d", &escolha);
             
                 novo->engenheiro = &engenheiros[escolha];
-                
                 break;
             }
             case 2: {
-                int ids[quantProjetos];
-                if(quantProjetos > 0) {
-                    for (int i = 0; i < quantProjetos; i++) {
+                int ids[quantProj];
+                if(quantProj > 0) {
+                    for (int i = 0; i < quantProj; i++) {
                         ids[i] = projetos[i].engenheiro->id;  
                     }
                 }
                 
-                quantEngenheiros += 1;
-                engenheiros = realloc(engenheiros, (quantEngenheiros) * sizeof(Engenheiro));
-                Engenheiro *novo = &(engenheiros)[quantEngenheiros - 1];
-                novo->id = quantEngenheiros - 1;  
+                quantEnge += 1;
+                engenheiros = realloc(engenheiros, (quantEnge) * sizeof(Engenheiro));
+                Engenheiro *novo = &(engenheiros)[quantEnge - 1];
+                novo->id = quantEnge - 1;  
                 
                 printf("Nome do engenheiro: ");
                 scanf(" %[^\n]", novo->nome);
                 printf("Formação do engenheiro: ");
                 scanf(" %[^\n]", novo->formacao);
                 
-                if(quantProjetos > 0) {
-                    for (int i = 0; i < (quantProjetos); i++) {
+                if(quantProj > 0) {
+                    for (int i = 0; i < (quantProj); i++) {
                         projetos[i].engenheiro = &engenheiros[ids[i]];
                     }
                 }
                 break;
             }
             case 3: {
-                if (quantProjetos == 0) {
-                    printf("Nenhum projeto cadastrado\n");
+                if (quantProj == 0) {
+                    printf("\nNenhum projeto cadastrado\n\n");
                     break;
                 }
                 printf("\n-------------------- Projetos --------------------");
-                for (int i = 0; i < quantProjetos; i++) {
+                for (int i = 0; i < quantProj; i++) {
                     printf("\nProjeto: %s, Valor: R$ %.2f, Engenheiro: %s\n", projetos[i].descricao, projetos[i].valor, projetos[i].engenheiro->nome);
                 }
                 printf("--------------------------------------------------\n\n");
                 break;
             }
             case 4: {
-                if (quantEngenheiros == 0) {
-                    printf("Nenhum engenheiro cadastrado\n");
+                if (quantEnge == 0) {
+                    printf("\nNenhum engenheiro cadastrado\n\n");
                     break;
                 }
                 printf("\n---------- Engenheiros ----------");
-                for (int i = 0; i < quantEngenheiros; i++) {
+                for (int i = 0; i < quantEnge; i++) {
                     printf("\nNome: %s, Formação: %s\n", engenheiros[i].nome, engenheiros[i].formacao); 
                 }
                 printf("---------------------------------\n\n");
@@ -163,11 +158,11 @@ int main()
                 char nome[50];
                 printf("Digite o nome do engenheiro: ");
                 scanf(" %[^\n]", nome);
-                Engenheiro *buscar = buscarEngenheiro(engenheiros, quantEngenheiros, nome);
+                Engenheiro *buscar = buscarEngenheiro(engenheiros, quantEnge, nome);
                 if (buscar) {
                     printf("\n---------- Engenheiro ----------");
                     printf("\nNome: %s, Formação: %s\n", buscar->nome, buscar->formacao);
-                    float total = totalContratos(projetos, quantProjetos, buscar);
+                    float total = totalContratos(projetos, quantProj, buscar);
                     printf("Total em contratos: R$ %.2f\n", total);
                     printf("--------------------------------\n\n");
                 } 
@@ -187,12 +182,12 @@ int main()
                         break;
                     }
                 
-                    fprintf(file, "%d\n", quantEngenheiros);
-                    for (int i = 0; i < quantEngenheiros; i++) {
+                    fprintf(file, "%d\n", quantEnge);
+                    for (int i = 0; i < quantEnge; i++) {
                         fprintf(file, "%d %s %s\n", engenheiros[i].id, engenheiros[i].nome, engenheiros[i].formacao);
                     }
-                    fprintf(file, "%d\n", quantProjetos);
-                    for (int i = 0; i < quantProjetos; i++) {
+                    fprintf(file, "%d\n", quantProj);
+                    for (int i = 0; i < quantProj; i++) {
                         fprintf(file, "%d %s %.2f %d\n", projetos[i].idProjeto, projetos[i].descricao, projetos[i].valor, projetos[i].engenheiro->id);
                     }
                 
@@ -201,7 +196,7 @@ int main()
                 break;
             }
         }
-    } while (opcao != 6);
+    } while (op != 6);
 
     free(engenheiros);
     free(projetos);
