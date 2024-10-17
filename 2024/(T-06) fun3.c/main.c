@@ -43,7 +43,7 @@ int main()
 
     Engenheiro *engenheiros = NULL;
     Projeto *projetos = NULL;
-    int quantEnge = 0, quantProj = 0, op, salvar;
+    int quantEnge = 0, quantProj = 0, op;
     
     FILE *file = fopen("dados.txt", "r");
     if (file != NULL) {
@@ -171,6 +171,7 @@ int main()
                 break;
             }
             case 6: {
+                int salvar;
                 printf("\n   [1] Sim  [2] Não \nDeseja salvar o arquivo? ");
                 scanf("%d", &salvar);
                 
