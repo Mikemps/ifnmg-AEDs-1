@@ -9,4 +9,3 @@ Repositório criado para armazenar os trabalhos de `AEDs I`
     - O repositório ficará público até o fim das férias, recomendo que clone o repositório para sua maquina ou copie 
     os códigos, eles podem ser úteis para estudos e referências futuras.
 
-    
