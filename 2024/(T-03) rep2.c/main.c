@@ -8,11 +8,11 @@ int main()
     int estMonit, boa=0, ruim=0, moderada=0;
     float pm25, co2, totalPMBoa=0, totalCO2Boa=0, totalPMRuim=0, totalCO2Ruim=0, totalPMMode=0, totalCO2Mode=0;
     do{
-        printf("Informe o n�mero de esta��es de monitoramento ambiental: ");
+        printf("Informe o número de estações de monitoramento ambiental: ");
         scanf("%i", &estMonit);
         
         if (estMonit<=0)
-            printf("\nValor inv�lido.\n\n");
+            printf("\nValor inválido.\n\n");
     }while(estMonit<=0);
  
     for (int estacoes=1; estacoes<=estMonit; estacoes++){
