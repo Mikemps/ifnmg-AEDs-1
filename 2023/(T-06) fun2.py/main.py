@@ -1,18 +1,18 @@
 def cargaHorariaTotal(disciplinas, nomePesquisa, index=0):
-    if index >= len(disciplinas):  # Caso base: se index sair dos limites
+    if index >= len(disciplinas):  
         return 0
     cargaHorariaDocente = 0
     if disciplinas[index]['docente'] is not None and nomePesquisa == disciplinas[index]['docente']['nome']:
         cargaHorariaDocente = disciplinas[index]['carga_horaria']
-    return cargaHorariaDocente + cargaHorariaTotal(disciplinas, nomePesquisa, index + 1)  # Chamada recursiva
+    return cargaHorariaDocente + cargaHorariaTotal(disciplinas, nomePesquisa, index + 1)  
 
 
 def pesquisa(docentes, nome, index=0):
-    if index >= len(docentes):  # Caso base: se index sair dos limites
+    if index >= len(docentes):  
         return None
     if docentes[index]['nome'] == nome:
-        return docentes[index]  # Docente encontrado
-    return pesquisa(docentes, nome, index + 1)  # Chamada recursiva
+        return docentes[index]  
+    return pesquisa(docentes, nome, index + 1)  
 
 
 disciplinas = []

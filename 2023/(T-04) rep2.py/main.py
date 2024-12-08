@@ -17,7 +17,7 @@ while True:
         print(f"[3]Espessura recomendada para o isolamento: {espeIso:.4f}")
     print("[4]Sair\n"+53*'-')
     opcao = int(input("Opção: "))
-    
+
     if opcao==4: 
         print("Calculadora encerrada!")
         break

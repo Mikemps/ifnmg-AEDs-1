@@ -16,4 +16,4 @@ elif pesoAnimal > pesoVivo*1.2:
     f"{supB:.2f}g do suplemento B devem ser ministrados")
     
 else:
-    print("O frango esta saudavel!")
+    print("O frango esta saudável!")

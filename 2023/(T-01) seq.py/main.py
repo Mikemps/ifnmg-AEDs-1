@@ -9,7 +9,4 @@ tempOrv =  (109.8 + tempBul) * (umidRel / 100)**0.1247 -109.8
 C1 = (tempOrv - tempInt) / (tempBul - tempOrv)
 espeIso = condTer * (C1*(1/convInt) - (1/convExt)) * 1000
 
-#print(f"tempOrv: {tempOrv:.2f}")
-#print(f"C1: {C1:.2f}")
-
 print(f"Espessura do isolamento: {espeIso:.2f}", "mm")

@@ -75,7 +75,7 @@ int main()
                         numDisciplinas++;
                     } 
                     else 
-                        printf("Erro: Docente '%s' não encontrado para a disciplina '%s'.\n", nomeDocente, disciplina->nome);
+                        printf("Erro: Docente '%s' nï¿½o encontrado para a disciplina '%s'.\n", nomeDocente, disciplina->nome);
                 }
             }
         }
@@ -90,7 +90,7 @@ int main()
         printf("[4] Exibir lista de docentes\n");
         printf("[5] Pesquisar docente pelo nome\n");
         printf("[6] Sair\n");
-        printf("Escolha uma opção: ");
+        printf("Escolha uma opï¿½ï¿½o: ");
         scanf("%d", &op);
         getchar();  
 
@@ -100,13 +100,13 @@ int main()
                 continue;
             }
 
-            printf("Docentes disponíveis:\n");
+            printf("Docentes disponï¿½veis:\n");
             for (int i = 0; i < numDocentes; i++) {
                 printf("%d. %s\n", i + 1, docentes[i].nome);
             }
 
             int escolhaDocente;
-            printf("Escolha o docente responsável pela disciplina: ");
+            printf("Escolha o docente responsï¿½vel pela disciplina: ");
             scanf("%d", &escolhaDocente);
             getchar();
 
@@ -121,12 +121,12 @@ int main()
                 fgets(disciplina->ementa, sizeof(disciplina->ementa), stdin);
                 strtok(disciplina->ementa, "\n"); 
 
-                printf("Carga horária da disciplina: ");
+                printf("Carga horï¿½ria da disciplina: ");
                 scanf("%d", &disciplina->carga_horaria);
                 disciplina->docente = &docentes[escolhaDocente - 1];
                 numDisciplinas++;
             } else {
-                printf("Escolha de docente inválida.\n");
+                printf("Escolha de docente invï¿½lida.\n");
             }
         } 
         else if (op == 2) {
@@ -136,7 +136,7 @@ int main()
             fgets(docente->nome, sizeof(docente->nome), stdin);
             docente->nome[strcspn(docente->nome, "\n")] = 0;  
 
-            printf("Área de atuação do docente: ");
+            printf("ï¿½rea de atuaï¿½ï¿½o do docente: ");
             fgets(docente->areaAtuacao, sizeof(docente->areaAtuacao), stdin);
             docente->areaAtuacao[strcspn(docente->areaAtuacao, "\n")] = 0;  
 
@@ -153,7 +153,7 @@ int main()
                 printf("Nome: %s\n", disciplina->nome);
                 printf("Ementa: %s\n", disciplina->ementa);
                 printf("Docente: %s\n", disciplina->docente->nome);
-                printf("Carga horária: %d Horas\n", disciplina->carga_horaria);
+                printf("Carga horï¿½ria: %d Horas\n", disciplina->carga_horaria);
                 printf("--------------------------------\n");
             }
         } 
@@ -162,7 +162,7 @@ int main()
             for (int i = 0; i < numDocentes; i++) {
                 struct Docente* docente = &docentes[i];
                 printf("Nome: %s\n", docente->nome);
-                printf("Área de atuação: %s\n", docente->areaAtuacao);
+                printf("ï¿½rea de atuaï¿½ï¿½o: %s\n", docente->areaAtuacao);
                 printf("Departamento: %s\n", docente->departamento);
                 printf("------------------------------\n");
             }
@@ -177,16 +177,17 @@ int main()
             if (docenteEncontrado) {
                 printf("\n-------------------------------\n");
                 printf("Docente: %s\n", docenteEncontrado->nome);
-                printf("Área de atuação: %s\n", docenteEncontrado->areaAtuacao);
+                printf("ï¿½rea de atuaï¿½ï¿½o: %s\n", docenteEncontrado->areaAtuacao);
                 printf("Departamento: %s\n", docenteEncontrado->departamento);
-                printf("Carga horária total: %d Horas\n", cargaHorariaTotal(disciplinas, numDisciplinas, docenteEncontrado->nome, 0));
+                printf("Carga horï¿½ria total: %d Horas\n", cargaHorariaTotal(disciplinas, numDisciplinas, docenteEncontrado->nome, 0));
                 printf("-------------------------------\n\n");
-            } else {
-                printf("\nDocente não encontrado.\n");
-            }
+            } 
+            else 
+                printf("\nDocente nï¿½o encontrado.\n");
+            
         } else if (op == 6) {
             char salvar;
-            printf("Deseja salvar as alterações? (S/N): ");
+            printf("Deseja salvar as alteraï¿½ï¿½es? (S/N): ");
             scanf(" %c", &salvar);
             getchar(); 
             
@@ -219,6 +220,6 @@ int main()
             break;
         } 
         else 
-            printf("\nOpção inválida. Tente novamente.\n\n");
+            printf("\nOpï¿½ï¿½o invï¿½lida. Tente novamente.\n\n");
     }
 }

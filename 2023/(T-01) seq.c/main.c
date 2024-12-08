@@ -30,8 +30,5 @@ int main()
     C1 = (tempOrv - tempInt) / (tempBul - tempOrv);
     espeIso = condTer * (C1*(1/convInt) - (1/convExt)) * 1000;
     
-    //printf("tempOrv: %.2f\n", tempOrv);
-    //printf("C1: %.2f\n", C1);
-    
     printf("Espessura do isolamento: %.2f mm", espeIso);
 }

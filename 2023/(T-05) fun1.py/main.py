@@ -68,6 +68,5 @@ while True:
         elif op == 4:
             print("Programa encerrado!")
             exit(0)
-        
         else:
             print("Opção inexistente!")

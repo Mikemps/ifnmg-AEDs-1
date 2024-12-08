@@ -13,7 +13,6 @@ while True:
         break
 
 for gatos in range(1, totGatos+1):
-    
     while True:
         print(19*'-', f"{gatos}º gato", 19*'-')
         circTor = float(input("Circunferência torácica (cm): "))

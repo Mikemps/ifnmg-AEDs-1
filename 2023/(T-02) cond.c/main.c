@@ -29,6 +29,6 @@ int main()
         "%.2fg do suplemento B devem ser ministrados", supB);
     }
     else {
-        printf("O frango esta saudavel!");
+        printf("O frango esta saudável!");
     }
 }
