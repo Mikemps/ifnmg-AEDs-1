@@ -70,16 +70,16 @@ int main()
         printf("[4] Exibir engenheiros\n");
         printf("[5] Pesquisar engenheiro por nome\n");
         printf("[6] Sair\n");
-        printf("Escolha uma opção: ");
+        printf("Escolha uma opï¿½ï¿½o: ");
         scanf("%d", &op);
 
         if(op > 6 || op < 1)
-            printf("\nOpção inválida.\n\n");
+            printf("\nOpï¿½ï¿½o invï¿½lida.\n\n");
 
         switch (op) {
             case 1: {
                 if (quantEnge == 0) {
-                    printf("\nNão há engenheiros cadastrados.\n\n");
+                    printf("\nNï¿½o hï¿½ engenheiros cadastrados.\n\n");
                     break;
                 }
             
@@ -88,12 +88,12 @@ int main()
                 Projeto *novo = &(projetos)[quantProj - 1];
                 novo->idProjeto = quantProj - 1;  
             
-                printf("Descrição do projeto: ");
+                printf("Descriï¿½ï¿½o do projeto: ");
                 scanf(" %[^\n]", novo->descricao);
                 printf("Valor do projeto: ");
                 scanf("%f", &novo->valor);
             
-                printf("\nEscolha o engenheiro responsável pelo projeto:\n");
+                printf("\nEscolha o engenheiro responsï¿½vel pelo projeto:\n");
                 for (int i = 0; i < quantEnge; i++) {
                     printf("[%d] - %s\n", engenheiros[i].id, engenheiros[i].nome);
                 }
@@ -120,7 +120,7 @@ int main()
                 
                 printf("Nome do engenheiro: ");
                 scanf(" %[^\n]", novo->nome);
-                printf("Formação do engenheiro: ");
+                printf("Formaï¿½ï¿½o do engenheiro: ");
                 scanf(" %[^\n]", novo->formacao);
                 
                 if(quantProj > 0) {
@@ -149,7 +149,7 @@ int main()
                 }
                 printf("\n---------- Engenheiros ----------");
                 for (int i = 0; i < quantEnge; i++) {
-                    printf("\nNome: %s, Formação: %s\n", engenheiros[i].nome, engenheiros[i].formacao); 
+                    printf("\nNome: %s, Formaï¿½ï¿½o: %s\n", engenheiros[i].nome, engenheiros[i].formacao); 
                 }
                 printf("---------------------------------\n\n");
                 break;
@@ -161,18 +161,18 @@ int main()
                 Engenheiro *buscar = buscarEngenheiro(engenheiros, quantEnge, nome);
                 if (buscar) {
                     printf("\n---------- Engenheiro ----------");
-                    printf("\nNome: %s, Formação: %s\n", buscar->nome, buscar->formacao);
+                    printf("\nNome: %s, Formaï¿½ï¿½o: %s\n", buscar->nome, buscar->formacao);
                     float total = totalContratos(projetos, quantProj, buscar);
                     printf("Total em contratos: R$ %.2f\n", total);
                     printf("--------------------------------\n\n");
                 } 
                 else 
-                    printf("\nEngenheiro não encontrado.\n\n");
+                    printf("\nEngenheiro nï¿½o encontrado.\n\n");
                 break;
             }
             case 6: {
                 int salvar;
-                printf("\n   [1] Sim  [2] Não \nDeseja salvar o arquivo? ");
+                printf("\n   [1] Sim  [2] Nï¿½o \nDeseja salvar o arquivo? ");
                 scanf("%d", &salvar);
                 
                 if (salvar == 1) {
@@ -191,7 +191,6 @@ int main()
                     for (int i = 0; i < quantProj; i++) {
                         fprintf(file, "%d %s %.2f %d\n", projetos[i].idProjeto, projetos[i].descricao, projetos[i].valor, projetos[i].engenheiro->id);
                     }
-                
                     fclose(file);
                 }
                 break;

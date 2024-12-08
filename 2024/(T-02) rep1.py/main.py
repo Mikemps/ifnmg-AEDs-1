@@ -4,7 +4,6 @@ while True:
                     \n[3] Calcular dados transmitidos (GB)\
                     \n[4] Sair\
                     \nOpção: "))
-    
     if op==1:
         tamArq = float(input("Informe o tamanho do arquivo (GB): "))
         tempo = float(input("Informe o tempo de transmissão (min): "))
