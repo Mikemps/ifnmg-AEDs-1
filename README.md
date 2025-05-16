@@ -6,6 +6,6 @@ Repositório criado para armazenar os trabalhos de `AEDs I`
     usadas nos códigos em `'C'`, servem apenas para exibir caracteres especiais no meu IDE, ou seja, não tem qualquer 
     ligação com as funcionalidades dos códigos.
 
-<div style="display: flex; justify-content: center; gap: 20px">
+<div style="display: flex; justify-content: center">
     <img src="./images/setLocale.png" alt="Exemplo" width="400">
 </div>
