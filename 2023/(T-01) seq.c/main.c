@@ -1,10 +1,10 @@
-#include <stdio.h>
-#include <math.h>
+//#include <stdio.h>
+//#include <math.h>
 #include <locale.h>
 
-int main()
-{
-    setlocale(LC_ALL, "Portuguese_Brazil");
+//int main()
+//{
+setlocale(LC_ALL, "Portuguese_Brazil");                                          
 
     float condTer, tempInt, tempBul, umidRel, convInt, convExt, tempOrv, C1, espeIso;
     
