@@ -7,5 +7,5 @@ Repositório criado para armazenar os trabalhos de `AEDs I`
     ligação com as funcionalidades dos códigos.
 
 <div style="display: flex; justify-content: center">
-    <img src="./images/setLocale.png" alt="Exemplo" width="500">
+    <img src="./images/setLocale.png" alt="Exemplo" width="400">
 </div>
