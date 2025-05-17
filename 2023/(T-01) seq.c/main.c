@@ -4,7 +4,7 @@
 
 int main()
 {
-setlocale(LC_ALL, "Portuguese_Brazil");
+    setlocale(LC_ALL, "Portuguese_Brazil");
 
     float condTer, tempInt, tempBul, umidRel, convInt, convExt, tempOrv, C1, espeIso;
     
